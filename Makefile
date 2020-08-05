@@ -10,7 +10,7 @@ BINDIR = bin
 DOCDIR = doc
 TESTDIR = test
 
-JUNIT = ./gson/gson-2.8.6.jar -sourcepath ./src ./src/$*.java
+JUNIT = ./gson/gson-2.6.2.jar -sourcepath ./src ./src/$*.java
 
 
 JAVAC = javac
@@ -27,16 +27,16 @@ vpath %.class $(BINDIR)
 	$(JAVAC) $(JFLAGS) $<
 
 classes: Person.class Car.class Driver.class Vehicle.class Passenger.class \
-		UberApp.class
-# Ride.class UberRide.class Database.class
+		UberApp.class Ride.class UberRide.class Database.class
+
 default: $(CLASSES)
 
 doc:
 	javadoc -d $(DOCDIR) -cp $(DOCDIR) $(SRCDIR)/*.java
 
 test_classes: Person.class Car.class Driver.class Vehicle.class Passenger.class \
-			UberApp.class   
-# Ride.class UberRide.class Database.class
+			UberApp.class Ride.class UberRide.class Database.class
+
 
 
 junit: test_classes
@@ -53,12 +53,12 @@ Passenger.class: Passenger.java
 	javac -d $(BINDIR) -cp $(JUNIT)
 UberApp.class: UberApp.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-# Ride.class: Ride.java
-# 	javac -d $(BINDIR) -cp $(JUNIT)
-# UberRide.class: UberRide.java
-# 	javac -d $(BINDIR) -cp $(JUNIT)
-# Database.class: Database.java
-# 	javac -d $(BINDIR) -cp $(JUNIT)
+Ride.class: Ride.java
+	javac -d $(BINDIR) -cp $(JUNIT)
+UberRide.class: UberRide.java
+	javac -d $(BINDIR) -cp $(JUNIT)
+Database.class: Database.java
+	javac -d $(BINDIR) -cp $(JUNIT)
 
 
 #test_classes: SearchItLinearTest.java eDirectoryTest.java #SearchItTest.java PrintItTest.java

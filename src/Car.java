@@ -5,32 +5,39 @@ public class Car implements Vehicle {
     String model;
     String type;
     double base_rate;
-    
+
     Car(String numberPlate, String color, String model, String type) {
         this.numberPlate = numberPlate;
         this.color = color;
         this.model = model;
         this.type = type;
-        if(type.equals("XL")){
-            this.base_rate = 15.00 ;
-        }
-        else{
+        if(type.equals("XL")) {
+            this.base_rate = 15.00;
+        } else {
             this.base_rate = 10.00;
         }
     }
 
-    public String getNumberPlate(){
+    public String getNumberPlate() {
         return this.numberPlate;
     }
-    public String getColor(){
+
+    public double getBaseRate() {
+        return this.base_rate;
+    }
+
+    public String getColor() {
         return this.color;
     }
-    public String getModel(){
+    public String getModel() {
         return this.model;
     }
 
+    public String getVehicleType() {
+        return this.type;
+    }
 
-    public String toString(){
+    public String toString() {
         return this.model + " car of " + this.color + " color, with number plate: " + this.numberPlate;
     }
 }
