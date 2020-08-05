@@ -3,13 +3,11 @@ import java.io.FileReader;
 
 public class Database {
 
-    //attributes
     String filePathToCSV;
     int numberOfXL;
     int numberOfX;
     Driver[] drivers;
 
-    //constructor
     Database() {}
 
     public int countLinesInCSV(String filename) {
@@ -39,14 +37,8 @@ public class Database {
         }
         System.out.print(" ]");
     }
-    //methods
+
     public void getDriversArray() {
-        /**
-         * read data from csv
-         * create car object using last 4 columns
-         * create driver object using first 5 columns
-         * add driver to Driver[]
-         */
 
         try {
             BufferedReader csvReader = new BufferedReader(new FileReader("drivers.csv"));
@@ -104,10 +96,5 @@ public class Database {
         }
 
         return XLdrivers;
-
-        // Driver[] drivers =
-
-
-        // for
     }
 }

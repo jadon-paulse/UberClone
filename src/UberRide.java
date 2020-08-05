@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.Random;
 
-// response.rows[0].elements[0].distance.text
 public class UberRide extends Ride {
 
     String startpoint;
@@ -39,7 +38,6 @@ public class UberRide extends Ride {
         Database DB = new Database();
         DB.getDriversArray();
         Driver[] drivers = DB.getArrayByVehicleType("XL");
-        // DB.printArray(drivers);
 
         Random ran = new Random();
         int randomIndex = ran.nextInt(drivers.length-1);
@@ -105,7 +103,6 @@ public class UberRide extends Ride {
             String distanceAsString = uberRide.retrieveDistanceAsString(response.toString());
             distance = Double.parseDouble(distanceAsString);
         } else {
-            // response = error;
             System.out.println("GET NOT WORKED");
         }
 
