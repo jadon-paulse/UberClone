@@ -3,6 +3,7 @@ import java.io.FileReader;
 
 public class Database {
 
+    //Instance variables
     String filePathToCSV;
     int numberOfXL;
     int numberOfX;
@@ -20,6 +21,7 @@ public class Database {
             }
             csvReader.close();
         }
+        //catch is handling he IOexception error from BufferedReader
         catch(Exception e) {
             System.out.println("Error: " + e.toString());
         }
@@ -28,6 +30,7 @@ public class Database {
         return i;
     }
 
+    //Creates an Array of drivers by looping through Driver array
     public void printArray(Driver[] drivers) {
         System.out.print("[ ");
         for(Driver d: drivers) {
@@ -41,6 +44,7 @@ public class Database {
     public void getDriversArray() {
 
         try {
+            //csvReader reads the CSV file and check for drivers
             BufferedReader csvReader = new BufferedReader(new FileReader("drivers.csv"));
             String row = null;
             int i = 0;
@@ -49,8 +53,12 @@ public class Database {
                 // System.out.println(row);
                 if(i > 0) {
                     String[] data = row.split(",");
+
+                    //Creating new Car object
                     Car car = new Car(data[5].trim(), data[6].trim(), data[7].trim(), data[8].trim());
                     // System.out.println(car);
+
+                    //Creating new Driver object
                     Driver driver = new Driver(car, data[0].trim(), data[1].trim(), data[2].trim(), data[3].trim(), Integer.parseInt(data[4].trim()));
                     // System.out.println(driver);
 
@@ -68,6 +76,7 @@ public class Database {
             }
             csvReader.close();
         }
+        //catch is handling he IOexception error from BufferedReader
         catch(Exception e) {
             System.out.println("Error: " + e.toString());
         }

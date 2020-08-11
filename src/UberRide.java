@@ -8,8 +8,10 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.Random;
 
+//UberRide extends Ride so that it gains access to Rides' abstract methods
 public class UberRide extends Ride {
 
+    //Instance variables
     String startpoint;
     String endpoint;
     double price;
@@ -21,6 +23,7 @@ public class UberRide extends Ride {
 
     UberRide() {}
 
+    //Constructors help initialize the class and gives the class specific properties
     UberRide(String startpoint, String endpoint, Passenger passenger){
         super();
         this.startpoint = startpoint;

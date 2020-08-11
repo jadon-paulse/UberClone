@@ -1,11 +1,14 @@
+//Car impements Vehicle to gain access methods and 
 public class Car implements Vehicle {
 
+    //Instance variables
     String numberPlate;
     String color;
     String model;
     String type;
     double base_rate;
 
+    //Constructors help initialize the class and gives the class specific properties
     Car(String numberPlate, String color, String model, String type) {
         this.numberPlate = numberPlate;
         this.color = color;
@@ -18,6 +21,8 @@ public class Car implements Vehicle {
         }
     }
 
+    //Setters and getters provide access to the private values 
+    //and allows reading and writing of them
     public String getNumberPlate() {
         return this.numberPlate;
     }
@@ -37,6 +42,7 @@ public class Car implements Vehicle {
         return this.type;
     }
 
+    //toString() converts everything that needs to be in a string to a string
     public String toString() {
         return this.model + " car of " + this.color + " color, with number plate: " + this.numberPlate;
     }

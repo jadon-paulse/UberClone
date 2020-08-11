@@ -27,7 +27,7 @@ public class UberApp {
         System.out.println(vehicleType);
         System.out.println("");
 
-
+        //Adds the startPoint and endPoint from uberRide and name from Passenger
         UberRide uberRide = new UberRide(startPoint, endPoint, steve);
 
         Driver assignedDriver = uberRide.assignDriver();

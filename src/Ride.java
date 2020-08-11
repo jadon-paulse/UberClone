@@ -1,3 +1,4 @@
+//Ride is restricted and will be used by uber ride
 public abstract class Ride {
 
     String estartingPoint;
