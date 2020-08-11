@@ -82,6 +82,8 @@ public class Database {
         }
     }
 
+    //Searching Driver array for specific types of vehicles and the drivers
+    //of those vehicles
     public Driver[] getArrayByVehicleType(String vehicleType) {
 
         Driver[] Xdrivers = new Driver[this.numberOfX];
